@@ -1,4 +1,6 @@
-/* Configuración general */
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
 
 * {
     margin: 0;
@@ -6,62 +8,239 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #ffffff;
+    color: #172033;
     line-height: 1.6;
 }
 
-/* Encabezado */
-
-header {
-    background-color: #172554;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
 }
 
-header p {
-    font-size: 1.1rem;
-    color: #dbeafe;
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8ebf0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Contenido principal */
+.navbar-content {
+    min-height: 68px;
 
-main {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Secciones */
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-section {
-    background-color: white;
-    margin-bottom: 30px;
-    padding: 30px;
+.logo span,
+footer strong span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    color: #667085;
+    font-size: 0.9rem;
+}
+
+.nav-links a {
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    background: #f7f9fc;
+    border-bottom: 1px solid #e8ebf0;
+    padding: 100px 0 90px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.tag,
+.eyebrow {
+    display: inline-block;
+
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.tag {
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 680px;
+
+    margin-top: 28px;
+
+    color: #667085;
+    font-size: 1.15rem;
+}
+
+.hero-info {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 32px;
+
+    color: #667085;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-light {
+    background: #f7f9fc;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+
+    margin-bottom: 50px;
+}
+
+.section-number {
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding-top: 7px;
+}
+
+.section-header h2 {
+    margin-top: 5px;
+
+    color: #172033;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.section-description {
+    max-width: 720px;
+
+    margin-top: -20px;
+    margin-bottom: 40px;
+
+    color: #667085;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.lead {
+    max-width: 700px;
+
+    color: #344054;
+    font-size: 1.35rem;
+    line-height: 1.7;
+}
+
+.simple-card {
+    padding: 28px;
+
+    background: #f7f9fc;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-section h2 {
-    color: #172554;
-    margin-bottom: 15px;
+.card-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #2563eb;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
 }
 
-/* Introducción */
-
-.intro {
-    border-left: 5px solid #2563eb;
+.simple-card p {
+    color: #475467;
 }
 
-/* Tarjetas */
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
 
 .cards {
     display: grid;
@@ -70,80 +249,335 @@ section h2 {
 }
 
 .card {
-    background-color: #eff6ff;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #dbeafe;
+    min-height: 220px;
+
+    padding: 30px;
+
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.section-light .card {
+    background: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 12px 30px rgba(16, 24, 40, 0.07);
+}
+
+.card-icon {
+    display: inline-flex;
+
+    margin-bottom: 35px;
+
+    color: #2563eb;
+    font-size: 0.75rem;
+    font-weight: 800;
 }
 
 .card h3 {
-    margin-bottom: 10px;
-    color: #1e3a8a;
+    margin-bottom: 12px;
+
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
 }
 
 .card p {
-    color: #444;
+    color: #667085;
 }
 
-/* Tarjetas de problemas */
 
-.warning {
-    background-color: #fff7ed;
-    border-color: #fed7aa;
+/* =========================================================
+   PROBLEMAS
+   ========================================================= */
+
+.problem-card {
+    background: #ffffff;
 }
 
-.warning h3 {
-    color: #9a3412;
+.problem-symbol {
+    display: flex;
+
+    width: 32px;
+    height: 32px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    background: #fff7ed;
+    color: #c2410c;
+
+    border-radius: 50%;
+
+    font-weight: 800;
 }
 
-/* Sección CTS */
 
-.cts {
-    background-color: #eef2ff;
+/* =========================================================
+   SECCIÓN CTS
+   ========================================================= */
+
+.cts-section {
+    background: #172033;
+    color: #ffffff;
 }
 
-/* Pregunta de investigación */
-
-.question {
-    background-color: #172554;
-    color: white;
+.light-header .section-number,
+.light-header .eyebrow {
+    color: #60a5fa;
 }
 
-.question h2 {
-    color: white;
+.light-header h2 {
+    color: #ffffff;
 }
 
-.question p {
+.cts-content {
+    max-width: 800px;
+}
+
+.cts-content p {
+    margin-bottom: 22px;
+
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PREGUNTA DE INVESTIGACIÓN
+   ========================================================= */
+
+.question-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.question-box {
+    max-width: 950px;
+
+    padding: 55px;
+
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+
+    border-left: 5px solid #2563eb;
+}
+
+.question-box h2 {
+    margin: 20px 0;
+
+    color: #172033;
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+}
+
+.question-box p {
+    color: #475467;
     font-size: 1.05rem;
 }
 
-/* Pie de página */
 
-footer {
-    background-color: #111827;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+/* =========================================================
+   PRÓXIMOS PASOS
+   ========================================================= */
+
+.next-steps {
+    max-width: 850px;
+
+    border-top: 1px solid #e4e7ec;
 }
 
-/* Diseño para celulares */
+.step {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 
-@media (max-width: 768px) {
+    padding: 20px 0;
 
-    header h1 {
-        font-size: 1.7rem;
+    border-bottom: 1px solid #e4e7ec;
+}
+
+.step span {
+    min-width: 30px;
+
+    color: #2563eb;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.step p {
+    color: #475467;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 35px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-content strong {
+    font-size: 1.2rem;
+}
+
+.footer-content p {
+    margin-top: 4px;
+
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .cards {
         grid-template-columns: 1fr;
     }
 
-    main {
-        width: 94%;
+    .card {
+        min-height: auto;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
     }
 
-    section {
-        padding: 22px;
+    /* Navegación */
+
+    .navbar-content {
+        min-height: 60px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 70px 0 65px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1.8px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-info {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+
+    /* Secciones */
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-header {
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-number {
+        font-size: 0.75rem;
+    }
+
+
+    /* Introducción */
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+
+    /* Tarjetas */
+
+    .card {
+        padding: 25px;
+    }
+
+
+    /* CTS */
+
+    .cts-content p {
+        font-size: 1rem;
+    }
+
+
+    /* Pregunta */
+
+    .question-box {
+        padding: 30px 25px;
+    }
+
+    .question-box h2 {
+        font-size: 1.45rem;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
 }
